@@ -1,11 +1,11 @@
-import LocalStorageManager from '../services/LocalStorageManager'
+import AffinityManager from '../services/AffinityManager'
 import PRODUCT_CATEGORIES from '../constants/PRODUCT_CATEGORIES'
 
 export default class AddCartTracker {
-  constructor(localStorageManager =  new LocalStorageManager()) {
-    this.localStorageManager = localStorageManager
-    this.productCategory = utag_data.category_id
+  constructor(affinityManager =  new AffinityManager()) {
     this.eventType = 'ADD_CART'
+    this.affinityManager = affinityManager
+    this.productCategory = utag_data.category_id
 
     const shouldTrack = PRODUCT_CATEGORIES.indexOf(this.productCategory) >= 0
 
@@ -13,18 +13,8 @@ export default class AddCartTracker {
       const addToCartButton = document.querySelector('.c-product-add-to-cart__button')
 
       addToCartButton.addEventListener('click', () => {
-        this.track()
+        this.affinityManager.countAffinity(this.productCategory, this.eventType)
       })
     }
-  }
-
-  track() {
-    const productData = {
-      eventType: this.eventType,
-      name: utag_data.product_name[0],
-      url: location.href
-    }
-
-    this.localStorageManager.countAffinity(productData, this.productCategory, this.eventType)
   }
 }

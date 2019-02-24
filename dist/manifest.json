@@ -1,6 +1,6 @@
 {
   "name": "DY-Afinnity",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "manifest_version": 2,
   "description": "This show the page content info according to the user affinity to the itens",
   "icons": {
