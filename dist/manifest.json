@@ -1,12 +1,12 @@
 {
   "name": "DY-Afinnity",
-  "version": "0.0.6",
+  "version": "0.0.4",
   "manifest_version": 2,
-  "description": "This show the page content info according to the user affinity to the itens",
+  "description": "This extension shows the page content info according to the user affinity to the itens",
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "dy-icon.png",
+    "48": "dy-icon.png",
+    "128": "dy-icon.png"
   },
   "web_accessible_resources": ["main.js"],
   "permissions": ["tabs", "http://*/*", "https://*/*"],
@@ -14,7 +14,7 @@
     {
       "run_at": "document_end",
       "matches": [
-        "https://*.urbanoutfitters.com/new-arrivals",
+        "https://*.urbanoutfitters.com/new-arrivals*",
         "https://*.urbanoutfitters.com/shop/*"
       ],
       "js": ["injectScript.js"]

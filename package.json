@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "yarn webpack --mode=production",
+    "build:w": "yarn build --watch",
     "test": "jest"
   },
   "repository": {
