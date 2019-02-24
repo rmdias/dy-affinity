@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "build": "yarn webpack --mode=production && yarn set:extension-config",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn webpack --mode=production",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/rmdias/dy-affinity#readme",
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "jest": "^24.1.0",
     "webpack": "^4.29.5",
     "webpack-dev-server": "^3.1.14"
   },
